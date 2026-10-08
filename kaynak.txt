@@ -1,0 +1,27 @@
+KİŞİSEL PORTFOLYO SİTESİ — KAYNAK VE KULLANIM BİLGİSİ
+
+Proje sahibi: Göksu Düzgün
+Teknolojiler: HTML5, CSS3, JavaScript (harici framework kullanılmamıştır).
+
+SAYFA YAPISI
+- index.html: Türkçe ana sayfa
+- hakkimda.html: Hakkımda, ders programı, beceri seviyeleri ve semantik HTML örnekleri
+- projeler.html: Projeler
+- blog.html: Web geliştirme ve erişilebilirlik üzerine üç yazı
+- galeri.html: Fotoğraf galerisi
+- iletisim.html: İstemci tarafı doğrulama kullanan iletişim formu
+- en/: Yukarıdaki sayfaların İngilizce sürümleri
+- css/style.css: Ortak responsive tasarım ve stiller
+- js/script.js: Mobil gezinme menüsü ve e-posta uygulamasıyla çalışan form
+
+GÖRSEL VE YAZI TİPİ KAYNAKLARI
+- Fotoğraf galerisi ve dekoratif görseller: Unsplash, https://unsplash.com/
+  Görseller dış bağlantı olarak yüklenir; internet bağlantısı olmadığında görünmeyebilir.
+- Yazı tipleri: Google Fonts — DM Sans ve Manrope, https://fonts.google.com/
+- Proje çalışma alanları eğitim başlıklarını ve kullanıcının belirttiği ilgi alanlarını yansıtır.
+- Galerideki Unsplash görselleri örnek/ilham görselleridir; Göksu'nun kişisel çalışmaları değildir.
+
+FORM BİLGİSİ
+İletişim formu bir sunucuya veri göndermez. E-posta uygulamasında ileti
+oluşturabilmesi için js/script.js dosyasındaki contactEmail değerini gerçek
+e-posta adresiyle değiştir. Sosyal bağlantıları da kişisel hesaplarla güncelle.
