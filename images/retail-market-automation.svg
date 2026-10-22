@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Retail sales and inventory automation interface illustration</title>
+  <desc id="desc">Original point-of-sale interface illustration with product cards, stock indicators, an active basket, and a checkout summary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#654b3d"/>
+      <stop offset=".55" stop-color="#bd8958"/>
+      <stop offset="1" stop-color="#e4bd83"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fffefa"/>
+      <stop offset="1" stop-color="#f8f5ef"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#d99d54"/>
+      <stop offset="1" stop-color="#bd7741"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#3e281c" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1080" cy="120" r="230" fill="#fff3ce" opacity=".13"/>
+  <circle cx="115" cy="620" r="250" fill="#473329" opacity=".12"/>
+  <path d="M0 540c207 33 342-93 561-40s431 137 639 17v183H0Z" fill="#50372a" opacity=".17"/>
+  <g filter="url(#shadow)" transform="translate(82 83)">
+    <rect width="1036" height="534" rx="24" fill="url(#panel)"/>
+    <path d="M24 0h988a24 24 0 0 1 24 24v52H0V24A24 24 0 0 1 24 0Z" fill="#fff"/>
+    <circle cx="32" cy="38" r="6" fill="#d88f82"/>
+    <circle cx="54" cy="38" r="6" fill="#dfbf79"/>
+    <circle cx="76" cy="38" r="6" fill="#86a78a"/>
+    <text x="112" y="43" fill="#847a71" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">MARKET DESK / SALES &amp; INVENTORY</text>
+    <rect x="0" y="76" width="194" height="458" fill="#f1eee8"/>
+    <rect x="25" y="103" width="38" height="38" rx="12" fill="url(#accent)"/>
+    <path d="M37 116h14v14H37zM40 112h8v4h-8z" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/>
+    <text x="75" y="128" fill="#59483c" font-family="Arial,sans-serif" font-size="18" font-weight="700">market</text>
+    <text x="75" y="143" fill="#bd8958" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2">AUTOMATION</text>
+    <rect x="16" y="169" width="162" height="42" rx="9" fill="#f5e7d4"/>
+    <rect x="31" y="184" width="12" height="12" rx="3" fill="#c1874f"/>
+    <text x="55" y="193" fill="#8f633e" font-family="Arial,sans-serif" font-size="13" font-weight="700">Quick sale</text>
+    <rect x="32" y="232" width="11" height="11" rx="2" fill="#b4aaa0"/>
+    <text x="55" y="242" fill="#827a73" font-family="Arial,sans-serif" font-size="13">Products</text>
+    <rect x="32" y="278" width="11" height="11" rx="2" fill="#b4aaa0"/>
+    <text x="55" y="288" fill="#827a73" font-family="Arial,sans-serif" font-size="13">Stock control</text>
+    <rect x="32" y="324" width="11" height="11" rx="2" fill="#b4aaa0"/>
+    <text x="55" y="334" fill="#827a73" font-family="Arial,sans-serif" font-size="13">Sales history</text>
+    <rect x="20" y="449" width="154" height="63" rx="11" fill="#e8e2d8"/>
+    <circle cx="48" cy="480" r="16" fill="#d5ba97"/>
+    <text x="40" y="484" fill="#725237" font-family="Arial,sans-serif" font-size="10" font-weight="700">POS</text>
+    <text x="74" y="478" fill="#59483c" font-family="Arial,sans-serif" font-size="12" font-weight="700">Register 01</text>
+    <text x="74" y="496" fill="#95897c" font-family="Arial,sans-serif" font-size="10">Ready for sales</text>
+    <text x="224" y="117" fill="#a3978a" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">POINT OF SALE</text>
+    <text x="224" y="151" fill="#44372e" font-family="Arial,sans-serif" font-size="25" font-weight="700">Product catalogue</text>
+    <rect x="702" y="101" width="190" height="39" rx="9" fill="#fff" stroke="#e9e3dc"/>
+    <circle cx="723" cy="120" r="6" fill="none" stroke="#a4988c" stroke-width="1.8"/>
+    <path d="m728 125 5 5" stroke="#a4988c" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="743" y="125" fill="#a89e93" font-family="Arial,sans-serif" font-size="11">Search products</text>
+    <rect x="905" y="101" width="108" height="39" rx="9" fill="#f0eee8"/>
+    <circle cx="923" cy="120" r="5" fill="#78936d"/>
+    <text x="936" y="124" fill="#6f756c" font-family="Arial,sans-serif" font-size="10">In stock</text>
+    <rect x="224" y="166" width="57" height="26" rx="13" fill="#f5e7d4"/>
+    <text x="242" y="183" fill="#93653c" font-family="Arial,sans-serif" font-size="10" font-weight="700">All</text>
+    <rect x="289" y="166" width="78" height="26" rx="13" fill="#fff" stroke="#ece7df"/>
+    <text x="306" y="183" fill="#81786e" font-family="Arial,sans-serif" font-size="10">Drinks</text>
+    <rect x="375" y="166" width="84" height="26" rx="13" fill="#fff" stroke="#ece7df"/>
+    <text x="390" y="183" fill="#81786e" font-family="Arial,sans-serif" font-size="10">Grocery</text>
+    <rect x="467" y="166" width="91" height="26" rx="13" fill="#fff" stroke="#ece7df"/>
+    <text x="482" y="183" fill="#81786e" font-family="Arial,sans-serif" font-size="10">Household</text>
+    <g>
+      <rect x="224" y="210" width="182" height="188" rx="13" fill="#fff" stroke="#ece7df"/>
+      <rect x="238" y="223" width="154" height="92" rx="9" fill="#f9e9da"/>
+      <circle cx="315" cy="269" r="27" fill="#e9a256"/>
+      <circle cx="306" cy="262" r="6" fill="#f7d276"/>
+      <circle cx="324" cy="276" r="7" fill="#f7d276"/>
+      <text x="239" y="339" fill="#4f453d" font-family="Arial,sans-serif" font-size="13" font-weight="700">Orange juice</text>
+      <text x="239" y="359" fill="#a39a8e" font-family="Arial,sans-serif" font-size="10">Cold drinks · 1 L</text>
+      <text x="239" y="383" fill="#b7783b" font-family="Arial,sans-serif" font-size="14" font-weight="700">₺45.00</text>
+      <rect x="419" y="210" width="182" height="188" rx="13" fill="#fff" stroke="#ece7df"/>
+      <rect x="433" y="223" width="154" height="92" rx="9" fill="#e5eee3"/>
+      <path d="M477 297c2-34 13-52 28-56 10 22 7 41-1 56Zm37 0c2-32 16-49 32-53 7 22 2 41-7 53Z" fill="#719675"/>
+      <path d="M499 299c-3-20-4-39-1-55m17 55c7-20 13-35 24-48" fill="none" stroke="#4d7557" stroke-width="3"/>
+      <text x="434" y="339" fill="#4f453d" font-family="Arial,sans-serif" font-size="13" font-weight="700">Filter coffee</text>
+      <text x="434" y="359" fill="#a39a8e" font-family="Arial,sans-serif" font-size="10">Coffee · 250 g</text>
+      <text x="434" y="383" fill="#b7783b" font-family="Arial,sans-serif" font-size="14" font-weight="700">₺89.90</text>
+      <rect x="614" y="210" width="182" height="188" rx="13" fill="#fff" stroke="#ece7df"/>
+      <rect x="628" y="223" width="154" height="92" rx="9" fill="#fbf0d8"/>
+      <path d="M681 290c-20-17-17-37 1-44 9 9 9 25-1 44Zm22 3c-7-23 0-41 20-46 9 21 2 38-20 46Z" fill="#dfb44e"/>
+      <path d="M699 299v-48" stroke="#78915a" stroke-width="3"/>
+      <text x="629" y="339" fill="#4f453d" font-family="Arial,sans-serif" font-size="13" font-weight="700">Organic bananas</text>
+      <text x="629" y="359" fill="#a39a8e" font-family="Arial,sans-serif" font-size="10">Produce · kg</text>
+      <text x="629" y="383" fill="#b7783b" font-family="Arial,sans-serif" font-size="14" font-weight="700">₺34.50</text>
+      <rect x="224" y="412" width="182" height="94" rx="13" fill="#fff" stroke="#ece7df"/>
+      <rect x="239" y="428" width="42" height="42" rx="9" fill="#e8eff3"/>
+      <path d="M249 437h22v23h-22z" fill="#fff" stroke="#87a9bb" stroke-width="2"/>
+      <path d="M254 443h12m-12 6h12" stroke="#87a9bb" stroke-width="2"/>
+      <text x="292" y="444" fill="#4f453d" font-family="Arial,sans-serif" font-size="11" font-weight="700">Oat milk</text>
+      <text x="292" y="461" fill="#a39a8e" font-family="Arial,sans-serif" font-size="9">Dairy-free · 1 L</text>
+      <text x="292" y="486" fill="#b7783b" font-family="Arial,sans-serif" font-size="12" font-weight="700">₺52.00</text>
+      <rect x="419" y="412" width="377" height="94" rx="13" fill="#f3eee5"/>
+      <text x="440" y="440" fill="#867969" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1">STOCK SNAPSHOT</text>
+      <text x="440" y="476" fill="#4b3d32" font-family="Arial,sans-serif" font-size="22" font-weight="700">128</text>
+      <text x="488" y="475" fill="#918577" font-family="Arial,sans-serif" font-size="10">products in catalogue</text>
+      <rect x="663" y="452" width="108" height="30" rx="15" fill="#e3ecdf"/>
+      <circle cx="679" cy="467" r="4" fill="#78936d"/>
+      <text x="690" y="471" fill="#65805b" font-family="Arial,sans-serif" font-size="9" font-weight="700">STOCK SYNCED</text>
+    </g>
+    <rect x="817" y="158" width="196" height="348" rx="14" fill="#fff" stroke="#e9e3dc"/>
+    <text x="837" y="188" fill="#4f453d" font-family="Arial,sans-serif" font-size="14" font-weight="700">Current basket</text>
+    <rect x="967" y="172" width="28" height="22" rx="11" fill="#f5e7d4"/>
+    <text x="976" y="187" fill="#986d43" font-family="Arial,sans-serif" font-size="9" font-weight="700">03</text>
+    <path d="M836 205h158" stroke="#eee9e1"/>
+    <circle cx="852" cy="231" r="12" fill="#faeadb"/>
+    <circle cx="852" cy="231" r="6" fill="#e9a256"/>
+    <text x="873" y="228" fill="#5d5248" font-family="Arial,sans-serif" font-size="10" font-weight="700">Orange juice</text>
+    <text x="873" y="244" fill="#a49a8f" font-family="Arial,sans-serif" font-size="9">₺45.00 × 1</text>
+    <text x="960" y="235" fill="#61564c" font-family="Arial,sans-serif" font-size="9" font-weight="700">₺45.00</text>
+    <path d="M836 259h158" stroke="#f0ece6"/>
+    <circle cx="852" cy="284" r="12" fill="#e5eee3"/>
+    <path d="M848 291c0-16 9-20 13-19-1 12-6 17-13 19Z" fill="#719675"/>
+    <text x="873" y="281" fill="#5d5248" font-family="Arial,sans-serif" font-size="10" font-weight="700">Filter coffee</text>
+    <text x="873" y="297" fill="#a49a8f" font-family="Arial,sans-serif" font-size="9">₺89.90 × 1</text>
+    <text x="960" y="288" fill="#61564c" font-family="Arial,sans-serif" font-size="9" font-weight="700">₺89.90</text>
+    <path d="M836 312h158" stroke="#f0ece6"/>
+    <circle cx="852" cy="337" r="12" fill="#fbf0d8"/>
+    <path d="M848 343c-7-10-2-15 3-14 5 5 3 11-3 14Zm5 2c-1-9 4-14 10-14 2 8-2 13-10 14Z" fill="#d3aa4d"/>
+    <text x="873" y="334" fill="#5d5248" font-family="Arial,sans-serif" font-size="10" font-weight="700">Organic bananas</text>
+    <text x="873" y="350" fill="#a49a8f" font-family="Arial,sans-serif" font-size="9">₺34.50 × 1</text>
+    <text x="960" y="341" fill="#61564c" font-family="Arial,sans-serif" font-size="9" font-weight="700">₺34.50</text>
+    <path d="M836 373h158" stroke="#eee9e1"/>
+    <text x="837" y="405" fill="#8f8478" font-family="Arial,sans-serif" font-size="11">Total</text>
+    <text x="929" y="407" fill="#44372e" font-family="Arial,sans-serif" font-size="18" font-weight="700">₺169.40</text>
+    <rect x="836" y="435" width="158" height="47" rx="9" fill="url(#accent)"/>
+    <path d="m866 457 5 5 10-12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="890" y="461" fill="#fff" font-family="Arial,sans-serif" font-size="11" font-weight="700">Complete sale</text>
+  </g>
+</svg>
