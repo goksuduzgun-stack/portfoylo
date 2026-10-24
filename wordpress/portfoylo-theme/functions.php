@@ -8,7 +8,7 @@ function gd_portfolio_enqueue_assets()
 {
     wp_enqueue_style(
         'gd-portfolio-fonts',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap',
+        'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap',
         array(),
         null
     );
@@ -25,6 +25,9 @@ function gd_portfolio_enqueue_assets()
         wp_get_theme()->get('Version'),
         true
     );
+    wp_localize_script('gd-portfolio-script', 'gdPortfolioContact', array(
+        'url' => rest_url('portfoylo/v1/contact'),
+    ));
 }
 add_action('wp_enqueue_scripts', 'gd_portfolio_enqueue_assets');
 

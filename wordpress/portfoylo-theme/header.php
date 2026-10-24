@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) {
 $language = gd_portfolio_current_language();
 $menu_label = $language === 'en' ? 'Main navigation' : 'Ana gezinme';
 $toggle_label = $language === 'en' ? 'Toggle menu' : 'Menüyü aç veya kapat';
+$header_class = (is_front_page() || is_page(array('ana-sayfa', 'home'))) ? 'site-header home-header' : 'site-header';
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,7 +17,7 @@ $toggle_label = $language === 'en' ? 'Toggle menu' : 'Menüyü aç veya kapat';
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#main-content"><?php echo esc_html($language === 'en' ? 'Skip to content' : 'İçeriğe geç'); ?></a>
-<header class="site-header">
+<header class="<?php echo esc_attr($header_class); ?>">
     <div class="container nav-wrap">
         <a class="brand" href="<?php echo esc_url(gd_portfolio_page_url('home')); ?>">
             <span class="brand-mark">gd.</span><span>Göksu Düzgün</span>

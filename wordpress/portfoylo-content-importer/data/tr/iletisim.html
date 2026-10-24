@@ -21,8 +21,9 @@
         <div class="form-row"><div class="form-field"><label for="name">Ad soyad <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" placeholder="Adınız" required></div><div class="form-field"><label for="email">E-posta <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="ornek@eposta.com" required></div></div>
         <div class="form-field"><label for="subject">Konu</label><input id="subject" name="subject" type="text" placeholder="Mesajınızın konusu"></div>
         <div class="form-field"><label for="message">Mesajınız <span aria-hidden="true">*</span></label><textarea id="message" name="message" rows="6" placeholder="Aklınızdakileri yazın..." required></textarea></div>
-        <button class="button button-primary" type="submit">Mesajı hazırla <span aria-hidden="true">↗</span></button>
-        <p class="form-feedback" data-form-feedback role="status" aria-live="polite">Form gönderimi e-posta uygulamanızı açar; bu statik site mesajları bir sunucuya kaydetmez.</p>
+        <div class="form-honeypot" aria-hidden="true"><label for="website">Web sitesi</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="button button-primary" type="submit">Mesajı gönder <span aria-hidden="true">↗</span></button>
+        <p class="form-feedback" data-form-feedback role="status" aria-live="polite">WordPress sürümünde mesaj e-posta olarak gönderilir; statik sürüm e-posta uygulamanızı açar.</p>
       </form>
     </div></section>
   </main>

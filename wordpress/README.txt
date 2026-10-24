@@ -18,8 +18,8 @@ LOCALWP
 İÇERİK
 - Ana sayfa, Hakkımda, Projeler, Galeri, İletişim ve Makaleler içerikleri WordPress sayfalarına aktarılır.
 - Üç makale her dilde ayrı WordPress yazısıdır; kategoriler ve etiketler ayrıca atanır.
-- İletişim formu mevcut davranışını korur: ziyaretçinin e-posta uygulamasını açar, sunucu üzerinden e-posta göndermez.
-- Görseller tema paketine yerel olarak eklenmiştir. Harita Google Maps yerleştirmesi olarak internet bağlantısı gerektirir.
+- WordPress iletişim formu, REST API üzerinden doğrulanmış mesajı goksuduzgun@gmail.com adresine wp_mail() ile gönderir. Canlı hostingde teslimat için SMTP ayarlarının yapılması gerekir. Statik HTML sürümü ziyaretçinin e-posta uygulamasını açar.
+- Görseller ve ana sayfanın sessiz, döngüsel arka plan videosu tema paketine yerel olarak eklenmiştir. Harita Google Maps yerleştirmesi olarak internet bağlantısı gerektirir.
 - Blog yazılarının ve sayfaların HTML içeriği, içe aktarımdan sonra WordPress panelinden düzenlenebilir.
 - Kurulum eklentisi yalnızca kendi oluşturduğu içerikleri günceller. Aynı URL kısa adına sahip, başka bir içerik varsa verinin üzerine yazmak yerine hata verir.
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Portfoylo Bilingual Content Setup
  * Description: Imports the Turkish and English portfolio pages and blog posts, then links their Polylang translations.
- * Version: 1.0.0
+ * Version: 1.2.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Göksu Düzgün
@@ -10,6 +10,66 @@
 
 if (!defined('ABSPATH')) {
     exit;
+}
+
+function gd_portfolio_register_contact_route()
+{
+    register_rest_route('portfoylo/v1', '/contact', array(
+        'methods' => WP_REST_Server::CREATABLE,
+        'callback' => 'gd_portfolio_send_contact_message',
+        'permission_callback' => '__return_true',
+    ));
+}
+add_action('rest_api_init', 'gd_portfolio_register_contact_route');
+
+function gd_portfolio_send_contact_message(WP_REST_Request $request)
+{
+    $data = $request->get_json_params();
+    if (!is_array($data)) {
+        return new WP_Error('gd_portfolio_contact_invalid', 'Please submit the contact form fields.', array('status' => 400));
+    }
+    foreach (array('name', 'email', 'subject', 'message', 'website') as $field) {
+        if (isset($data[$field]) && !is_string($data[$field])) {
+            return new WP_Error('gd_portfolio_contact_invalid', 'Contact form fields must be text.', array('status' => 400));
+        }
+    }
+
+    if (!empty($data['website'])) {
+        return new WP_REST_Response(array('message' => 'Message accepted.'), 200);
+    }
+
+    $name = isset($data['name']) ? sanitize_text_field($data['name']) : '';
+    $email = isset($data['email']) ? sanitize_email($data['email']) : '';
+    $subject = isset($data['subject']) ? sanitize_text_field($data['subject']) : '';
+    $message = isset($data['message']) ? sanitize_textarea_field($data['message']) : '';
+
+    if (strlen($name) > 360 || strlen($email) > 254 || strlen($subject) > 450 || strlen($message) > 8000) {
+        return new WP_Error('gd_portfolio_contact_too_long', 'One or more fields exceed the allowed length.', array('status' => 400));
+    }
+    if ($name === '' || !is_email($email) || $message === '') {
+        return new WP_Error('gd_portfolio_contact_invalid', 'Enter your name, a valid email address, and a message.', array('status' => 400));
+    }
+
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+    $rate_key = 'gd_portfolio_contact_' . hash_hmac('sha256', $ip, wp_salt('auth'));
+    $attempts = (int) get_transient($rate_key);
+    if ($attempts >= 5) {
+        return new WP_Error('gd_portfolio_contact_rate_limited', 'Too many messages were submitted. Please try again later.', array('status' => 429));
+    }
+    set_transient($rate_key, $attempts + 1, 10 * MINUTE_IN_SECONDS);
+
+    $sent = wp_mail(
+        'goksuduzgun@gmail.com',
+        $subject !== '' ? $subject : 'Portfolio website message',
+        "Name: {$name}\nEmail: {$email}\n\n{$message}",
+        array('Reply-To: ' . $email)
+    );
+
+    if (!$sent) {
+        return new WP_Error('gd_portfolio_contact_send_failed', 'The email could not be sent. Please use the direct email link instead.', array('status' => 500));
+    }
+
+    return new WP_REST_Response(array('message' => 'Your message has been sent.'), 200);
 }
 
 function gd_portfolio_import_page_map()
@@ -317,6 +377,20 @@ function gd_portfolio_import_content()
             $content = $source_contents[$language][$key];
             $content = preg_replace_callback(
                 '/(<img\b[^>]*\bsrc=["\'])(?:\.\.\/)?images\/([^"\']+)(["\'])/i',
+                function ($matches) {
+                    return $matches[1] . get_theme_file_uri('assets/images/' . rawurlencode($matches[2])) . $matches[3];
+                },
+                $content
+            );
+            $content = preg_replace_callback(
+                '/(<source\b[^>]*\bsrc=["\'])(?:\.\.\/)?images\/([^"\']+)(["\'])/i',
+                function ($matches) {
+                    return $matches[1] . get_theme_file_uri('assets/images/' . rawurlencode($matches[2])) . $matches[3];
+                },
+                $content
+            );
+            $content = preg_replace_callback(
+                '/(<video\b[^>]*\bposter=["\'])(?:\.\.\/)?images\/([^"\']+)(["\'])/i',
                 function ($matches) {
                     return $matches[1] . get_theme_file_uri('assets/images/' . rawurlencode($matches[2])) . $matches[3];
                 },
