@@ -16,10 +16,10 @@ LOCALWP
 9. Ön yüzde altı sayfayı, dil değiştiriciyi ve her dildeki üç blog yazısını kontrol edin.
 
 İÇERİK
-- Ana sayfa, Hakkımda, Projeler, Galeri, İletişim ve Makaleler içerikleri WordPress sayfalarına aktarılır.
+- Ana sayfa “Birlikte Derleyelim” iletişim çağrısını gösterir; iletişim formunun başlığı “Log Düş” olarak düzenlenmiştir. Projeler sayfasında klavye, dokunmatik ekran ve fareyle kullanılabilen 3B kart seçicisi vardır; kartlar ilgili proje detaylarına gider. Hakkımda, Projeler, Galeri ve Makaleler içerikleri kendi sayfalarında yer alır.
 - Üç makale her dilde ayrı WordPress yazısıdır; kategoriler ve etiketler ayrıca atanır.
 - WordPress iletişim formu, REST API üzerinden doğrulanmış mesajı goksuduzgun@gmail.com adresine wp_mail() ile gönderir. Canlı hostingde teslimat için SMTP ayarlarının yapılması gerekir. Statik HTML sürümü ziyaretçinin e-posta uygulamasını açar.
-- Görseller ve ana sayfanın sessiz, döngüsel arka plan videosu tema paketine yerel olarak eklenmiştir. Harita Google Maps yerleştirmesi olarak internet bağlantısı gerektirir.
+- Görseller ve ana sayfanın sessiz, döngüsel arka plan videosu tema paketine yerel olarak eklenmiştir. Tarayıcı otomatik oynatmayı engellerse veya hareket azaltma ayarı açıksa videoyu oynatmak için ana sayfadaki düğmeyi kullanın. Harita Google Maps yerleştirmesi olarak internet bağlantısı gerektirir.
 - Blog yazılarının ve sayfaların HTML içeriği, içe aktarımdan sonra WordPress panelinden düzenlenebilir.
 - Kurulum eklentisi yalnızca kendi oluşturduğu içerikleri günceller. Aynı URL kısa adına sahip, başka bir içerik varsa verinin üzerine yazmak yerine hata verir.
 

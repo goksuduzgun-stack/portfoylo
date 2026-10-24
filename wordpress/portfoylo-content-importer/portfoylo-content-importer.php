@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Portfoylo Bilingual Content Setup
  * Description: Imports the Turkish and English portfolio pages and blog posts, then links their Polylang translations.
- * Version: 1.2.0
+ * Version: 1.2.5
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Göksu Düzgün
@@ -132,6 +132,17 @@ function gd_portfolio_load_source($language, $file)
         return new WP_Error('gd_portfolio_source_read_failed', sprintf('Could not read source file: %s', $file));
     }
 
+    $preserved_html5 = array();
+    $html = preg_replace_callback(
+        '/<(video|canvas)\b[^>]*>.*?<\/\1>/is',
+        function ($matches) use (&$preserved_html5) {
+            $placeholder = 'GDPORTFOLIOHTML5' . count($preserved_html5) . 'PLACEHOLDER';
+            $preserved_html5[$placeholder] = $matches[0];
+            return $placeholder;
+        },
+        $html
+    );
+
     $previous_errors = libxml_use_internal_errors(true);
     $document = new DOMDocument('1.0', 'UTF-8');
     $loaded = $document->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING);
@@ -142,7 +153,7 @@ function gd_portfolio_load_source($language, $file)
         return new WP_Error('gd_portfolio_source_invalid', sprintf('Could not parse source file: %s', $file));
     }
 
-    return array($document, new DOMXPath($document));
+    return array($document, new DOMXPath($document), $preserved_html5);
 }
 
 function gd_portfolio_source_page_html($language, $file, $page_key)
@@ -152,7 +163,7 @@ function gd_portfolio_source_page_html($language, $file, $page_key)
         return $source;
     }
 
-    list($document, $xpath) = $source;
+    list($document, $xpath, $preserved_html5) = $source;
     $main_nodes = $xpath->query('//main[@id="main-content"]');
     if (!$main_nodes || !$main_nodes->length) {
         return new WP_Error('gd_portfolio_main_missing', sprintf('Main content was not found in %s.', $file));
@@ -164,10 +175,10 @@ function gd_portfolio_source_page_html($language, $file, $page_key)
         if (!$hero_nodes || !$hero_nodes->length) {
             return new WP_Error('gd_portfolio_blog_intro_missing', sprintf('Blog introduction was not found in %s.', $file));
         }
-        return gd_portfolio_inner_html($hero_nodes->item(0), $document);
+        return strtr(gd_portfolio_inner_html($hero_nodes->item(0), $document), $preserved_html5);
     }
 
-    return gd_portfolio_inner_html($main, $document);
+    return strtr(gd_portfolio_inner_html($main, $document), $preserved_html5);
 }
 
 function gd_portfolio_source_posts($language)

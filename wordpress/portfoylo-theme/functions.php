@@ -31,6 +31,14 @@ function gd_portfolio_enqueue_assets()
 }
 add_action('wp_enqueue_scripts', 'gd_portfolio_enqueue_assets');
 
+function gd_portfolio_preserve_front_page_markup()
+{
+    if (is_front_page()) {
+        remove_filter('the_content', 'wpautop');
+    }
+}
+add_action('wp', 'gd_portfolio_preserve_front_page_markup');
+
 function gd_portfolio_theme_setup()
 {
     add_theme_support('title-tag');
